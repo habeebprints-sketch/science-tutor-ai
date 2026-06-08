@@ -1,110 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Science Tutor AI</title>
-
 <style>
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
     margin:0;
+    padding:20px;
     background:#f4f4f4;
 }
-
-header{
-    background:#0066cc;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-.container{
-    padding:20px;
-}
-
-.card{
+.section{
     background:white;
     margin:15px 0;
-    padding:20px;
+    padding:15px;
     border-radius:10px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
-
-button{
-    width:100%;
-    padding:15px;
-    margin-top:10px;
-    border:none;
-    border-radius:8px;
-    background:#0066cc;
-    color:white;
-    font-size:16px;
-}
-
-button:hover{
-    cursor:pointer;
-}
-
-footer{
+h1,h2{
     text-align:center;
-    padding:15px;
-    background:#ddd;
-    margin-top:20px;
+}
+details{
+    margin:10px 0;
 }
 </style>
 </head>
-
 <body>
 
-<header>
 <h1>📚 Science Tutor AI</h1>
-<p>Your WAEC Science Learning Assistant</p>
-</header>
 
-<div class="container">
-
-<div class="card">
+<div class="section">
 <h2>Physics</h2>
-<p>Learn SS1, SS2 and SS3 Physics topics.</p>
-<button>Open Physics</button>
+
+<details>
+<summary>SS1 Topics</summary>
+<ul>
+<li>Measurements and Units</li>
+<li>Scalars and Vectors</li>
+<li>Motion</li>
+<li>Force</li>
+<li>Work, Energy and Power</li>
+<li>Machines</li>
+</ul>
+</details>
+
+<details>
+<summary>SS2 Topics</summary>
+<ul>
+<li>Heat Energy</li>
+<li>Gas Laws</li>
+<li>Waves</li>
+<li>Sound Waves</li>
+<li>Reflection of Light</li>
+<li>Refraction of Light</li>
+<li>Lenses</li>
+</ul>
+</details>
+
+<details>
+<summary>SS3 Topics</summary>
+<ul>
+<li>Electrostatics</li>
+<li>Current Electricity</li>
+<li>Magnetism</li>
+<li>Electromagnetic Induction</li>
+<li>Radioactivity</li>
+</ul>
+</details>
 </div>
 
-<div class="card">
+<div class="section">
 <h2>Chemistry</h2>
-<p>Study Chemistry notes and examples.</p>
-<button>Open Chemistry</button>
+<ul>
+<li>Atomic Structure</li>
+<li>Periodic Table</li>
+<li>Chemical Bonding</li>
+<li>Acids and Bases</li>
+<li>Organic Chemistry</li>
+<li>Electrolysis</li>
+</ul>
 </div>
 
-<div class="card">
+<div class="section">
 <h2>Biology</h2>
-<p>Learn Biology topics for WAEC.</p>
-<button>Open Biology</button>
+<ul>
+<li>Cell Structure</li>
+<li>Nutrition</li>
+<li>Ecology</li>
+<li>Genetics</li>
+<li>Reproduction</li>
+</ul>
 </div>
 
-<div class="card">
+<div class="section">
 <h2>Mathematics</h2>
-<p>Practice Mathematics with examples.</p>
-<button>Open Mathematics</button>
+<ul>
+<li>Algebra</li>
+<li>Trigonometry</li>
+<li>Statistics</li>
+<li>Coordinate Geometry</li>
+<li>Calculus</li>
+</ul>
 </div>
 
-<div class="card">
+<div class="section">
 <h2>Further Mathematics</h2>
-<p>Advanced Mathematics topics.</p>
-<button>Open Further Maths</button>
+<ul>
+<li>Matrices</li>
+<li>Vectors</li>
+<li>Differentiation</li>
+<li>Integration</li>
+</ul>
 </div>
 
-<div class="card">
+<div class="section">
 <h2>🤖 Ask AI</h2>
-<p>Ask questions and get explanations.</p>
-<button>Open AI Tutor</button>
+
+<input type="text" id="question"
+placeholder="Ask a question..."
+style="width:100%;padding:10px;">
+
+<button onclick="answerQuestion()">
+Ask
+</button>
+
+<p id="answer"></p>
 </div>
 
-</div>
+<script>
+function answerQuestion(){
 
-<footer>
-Science Tutor AI © 2026
-</footer>
+let q =
+document.getElementById("question")
+.value.toLowerCase();
+
+let answer =
+"Sorry, I don't know that yet.";
+
+if(q.includes("sound wave")){
+answer =
+"Sound waves are mechanical waves produced by vibrating bodies.";
+}
+
+if(q.includes("refraction")){
+answer =
+"Refraction is the bending of light when it moves from one medium to another.";
+}
+
+if(q.includes("photosynthesis")){
+answer =
+"Photosynthesis is the process by which green plants make food using sunlight.";
+}
+
+document.getElementById("answer")
+.innerText = answer;
+}
+</script>
 
 </body>
 </html>
