@@ -10,6 +10,12 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
+// 👇 HOME ROUTE (FIX)
+app.get("/", (req, res) => {
+  res.send("Science Tutor API is running 🚀");
+});
+
+// 👇 CHAT ROUTE
 app.post("/chat", async (req, res) => {
   try {
     const message = req.body.message;
